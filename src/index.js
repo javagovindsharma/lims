@@ -1,24 +1,13 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Link, Switch  } from 'react-router-dom';
-import { RouteBody } from './app-routes';
-import './style.css';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      name: 'React'
+import App from './App';
 
-      
-    };
-  }
-  
-  render() {
-    return (
-      <RouteBody />
-    );
-  }
-}
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
 
-render(<App />, document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
